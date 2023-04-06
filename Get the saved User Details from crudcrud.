@@ -1,0 +1,14 @@
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('https://example.com/users')
+    .then(response => response.json())
+    .then(data => {
+      // display user details on the website
+      const userDetails = document.createElement('p');
+      userDetails.textContent = `Username: ${data.username}, Email: ${data.email}`;
+      document.body.appendChild(userDetails);
+    })
+    .catch(error => console.error(error));
+});
+
+
+#In this code snippet, the fetch method is used to retrieve user data from the API endpoint https://example.com/users. The response.json() method is called to parse the response as JSON. Then, the user details are displayed on the website by creating a new p element and appending it to the body element.
